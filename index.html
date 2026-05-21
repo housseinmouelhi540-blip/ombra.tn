@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OMBRA</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family:'Montserrat',sans-serif;
+      background:#776e6e;
+      color:#fff;
+      overflow-x:hidden;
+    }
+
+    body::-webkit-scrollbar{
+      width:8px;
+    }
+
+    body::-webkit-scrollbar-thumb{
+      background:#fff;
+    }
+
+    a{
+      text-decoration:none;
+      color:white;
+    }
+
+    /* NAVBAR */
+
+    nav{
+      position:fixed;
+      width:100%;
+      top:0;
+      left:0;
+      padding:25px 8%;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      z-index:999;
+      backdrop-filter:blur(10px);
+      background:rgba(0,0,0,0.2);
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:800;
+      letter-spacing:8px;
+    }
+
+    nav ul{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    nav ul li a{
+      font-size:14px;
+      letter-spacing:3px;
+      transition:0.3s;
+    }
+
+    nav ul li a:hover{
+      opacity:0.5;
+    }
+
+    /* HERO */
+
+    .hero{
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      flex-direction:column;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:140%;
+      height:140%;
+      background:url('https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1974&auto=format&fit=crop') center/cover;
+      filter:grayscale(100%) brightness(0.2);
+      animation:zoom 18s infinite alternate;
+      z-index:-2;
+    }
+
+    .hero::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:linear-gradient(to bottom, rgba(0,0,0,0.4), #000);
+      z-index:-1;
+    }
+
+    @keyframes zoom{
+      from{
+        transform:scale(1);
+      }
+      to{
+        transform:scale(1.1);
+      }
+    }
+
+    .hero h1{
+      font-size:120px;
+      letter-spacing:20px;
+      font-weight:800;
+      margin-bottom:20px;
+      animation:fadeUp 1.5s ease;
+    }
+
+    .hero p{
+      font-size:18px;
+      letter-spacing:5px;
+      margin-bottom:40px;
+      opacity:0.8;
+      animation:fadeUp 2s ease;
+    }
+
+    .hero button{
+      padding:15px 40px;
+      background:rgb(0, 0, 0);
+      color:black;
+      border:none;
+      cursor:pointer;
+      font-weight:700;
+      letter-spacing:4px;
+      transition:0.4s;
+      animation:fadeUp 2.5s ease;
+    }
+
+    .hero button:hover{
+      background:rgb(238, 229, 229);
+      color:white;
+      border:1px solid white;
+      transform:translateY(-5px);
+    }
+
+    @keyframes fadeUp{
+      from{
+        opacity:0;
+        transform:translateY(40px);
+      }
+      to{
+        opacity:1;
+        transform:translateY(0);
+      }
+    }
+
+    /* SECTION TITLE */
+
+    .section-title{
+      text-align:center;
+      font-size:50px;
+      letter-spacing:10px;
+      margin-bottom:80px;
+      font-weight:800;
+    }
+
+    /* PRODUCTS */
+
+    .products{
+      padding:120px 8%;
+      background:#050505;
+    }
+
+    .product-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:40px;
+    }
+
+    .card{
+      background:#0d0d0d;
+      border:1px solid rgba(255,255,255,0.05);
+      overflow:hidden;
+      transition:0.4s;
+    }
+
+    .card:hover{
+      transform:translateY(-10px);
+      border-color:white;
+    }
+
+    .card img{
+      width:100%;
+      height:350px;
+      object-fit:cover;
+      filter:grayscale(100%);
+      transition:0.4s;
+    }
+
+    .card:hover img{
+      transform:scale(1.05);
+    }
+
+    .card-content{
+      padding:25px;
+    }
+
+    .card-content h3{
+      font-size:20px;
+      margin-bottom:10px;
+      letter-spacing:3px;
+    }
+
+    .card-content p{
+      opacity:0.7;
+      margin-bottom:20px;
+    }
+
+    .card-content button{
+      width:100%;
+      padding:12px;
+      border:none;
+      background:white;
+      color:black;
+      font-weight:700;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .card-content button:hover{
+      background:black;
+      color:white;
+      border:1px solid white;
+    }
+
+    /* PHILOSOPHY */
+
+    .philosophy{
+      min-height:70vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:100px 10%;
+      background:#000;
+    }
+
+    .philosophy h2{
+      font-size:60px;
+      line-height:1.5;
+      letter-spacing:5px;
+      max-width:1000px;
+      font-weight:300;
+    }
+
+    /* DROP */
+
+    .drop{
+      padding:120px 8%;
+      background:#050505;
+      text-align:center;
+    }
+
+    .drop img{
+      width:100%;
+      max-width:700px;
+      margin-bottom:40px;
+      filter:grayscale(100%);
+    }
+
+    .drop h2{
+      font-size:50px;
+      letter-spacing:8px;
+      margin-bottom:20px;
+    }
+
+    .countdown{
+      display:flex;
+      justify-content:center;
+      gap:30px;
+      margin-top:40px;
+      flex-wrap:wrap;
+    }
+
+    .time-box{
+      border:1px solid rgba(255,255,255,0.1);
+      padding:25px;
+      min-width:120px;
+    }
+
+    .time-box span{
+      display:block;
+      font-size:40px;
+      font-weight:800;
+    }
+
+    /* NEWSLETTER */
+
+    .newsletter{
+      padding:120px 8%;
+      text-align:center;
+    }
+
+    .newsletter h2{
+      font-size:45px;
+      letter-spacing:8px;
+      margin-bottom:20px;
+    }
+
+    .newsletter p{
+      opacity:0.7;
+      margin-bottom:40px;
+    }
+
+    .newsletter form{
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:15px;
+    }
+
+    .newsletter input{
+      padding:18px;
+      width:350px;
+      background:#111;
+      border:none;
+      color:white;
+      outline:none;
+    }
+
+    .newsletter button{
+      padding:18px 35px;
+      border:none;
+      background:white;
+      color:black;
+      font-weight:700;
+      cursor:pointer;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:40px 8%;
+      border-top:1px solid rgba(255,255,255,0.08);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    footer p{
+      opacity:0.6;
+    }
+
+    .socials{
+      display:flex;
+      gap:20px;
+    }
+
+    .socials a{
+      opacity:0.7;
+      transition:0.3s;
+    }
+
+    .socials a:hover{
+      opacity:1;
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:65px;
+        letter-spacing:10px;
+      }
+
+      .philosophy h2{
+        font-size:35px;
+      }
+
+      nav ul{
+        display:none;
+      }
+
+      .section-title{
+        font-size:35px;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+
+  <nav>
+    <div class="logo">OMBRA</div>
+
+    <ul>
+      <li><a href="#shop">SHOP</a></li>
+      <li><a href="#drop">DROP</a></li>
+      <li><a href="#about">ABOUT</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <h1>OMBRA</h1>
+
+    <p>BUILT FROM SHADOWS</p>
+
+    <button onclick="scrollToProducts()">
+      ENTER
+    </button>
+
+  </section>
+
+  <!-- PRODUCTS -->
+
+  <section class="products" id="shop">
+
+    <h2 class="section-title">COLLECTION</h2>
+
+    <div class="product-grid">
+
+      <div class="card">
+        <img src=https://images.openai.com/static-rsc-4/vlZfP4GUcORSRrh67gOZgCwfryKI_fWADjSigB7Zi8atwZ174nP0Nz-23acfthrJ1BCH85NhTorme9m6YUriGNMKyrTV13ry-cqi6dN2vWrU8E0U5ZsRLprZAro3TbabOReVPYCO3S9lB1PT6mPC7Zafe0XMfbmUjcNF_TQuq2ksmv15Ep1jbMvHUQIQ3T7I?purpose=fullsize>
+        <div class="card-content">
+          <h3>hwassa omb</h3>
+          <p>99 DT</p>
+          <button>Add To Cart</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1974&auto=format&fit=crop">
+        <div class="card-content">
+          <h3>ombra HOODIE</h3>
+          <p>99 DT</p>
+          <button>Add To Cart</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src=https://scontent.ftun6-1.fna.fbcdn.net/v/t1.15752-9/696391020_955676317225578_1574493210366622484_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_ohc=NJ6yXHLMGGsQ7kNvwFn5oPt&_nc_oc=AdonNznmLf3YivFS_TOpEfY-4_dGBkau8M8hFrpu0rgiEyOVpMHwcz7VTATiJ0dSByA&_nc_zt=23&_nc_ht=scontent.ftun6-1.fna&_nc_ss=7b6a8&oh=03_Q7cD5QGeG9VGaNMuIrKmNqgjGFqpTsWvu4CVBFxMAPTNQ2GwqQ&oe=6A3682E3>
+        <div class="card-content">
+          <h3>black PANTS</h3>
+          <p>99 DT</p>
+          <button>Add To Cart</button>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- PHILOSOPHY -->
+
+  <section class="philosophy" id="about">
+
+    <h2>
+      OMBRA IS NOT CLOTHING.<br>
+      IT IS IDENTITY.<br>
+      SILENCE. DARKNESS. PRESENCE.
+    </h2>
+
+  </section>
+
+  <!-- DROP -->
+
+  <section class="drop" id="drop">
+
+    <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1974&auto=format&fit=crop">
+
+    <h2>LIMITED DROP</h2>
+
+    <p>New collection coming soon.</p>
+
+    <div class="countdown">
+
+      <div class="time-box">
+        <span id="days">00</span>
+        DAYS
+      </div>
+
+      <div class="time-box">
+        <span id="hours">00</span>
+        HOURS
+      </div>
+
+      <div class="time-box">
+        <span id="minutes">00</span>
+        MINUTES
+      </div>
+
+      <div class="time-box">
+        <span id="seconds">00</span>
+        SECONDS
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- NEWSLETTER -->
+
+  <section class="newsletter">
+
+    <h2>JOIN OMBRA</h2>
+
+    <p>Be the first to access future drops.</p>
+
+    <form>
+      <input type="email" placeholder="Your Email">
+      <button type="submit">JOIN</button>
+    </form>
+
+  </section>
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <p>© OMBRA.TN</p>
+
+    <div class="socials">
+      <a href="#">INSTAGRAM : @ombra.tn</a>
+      <a href="#">TIKTOK : @ombra.tn</a>
+      <a href="#">CONTACT : +216 99659649</a>
+    </div>
+
+  </footer>
+
+  <script>
+
+    // SCROLL
+
+    function scrollToProducts(){
+      document.getElementById("shop").scrollIntoView({
+        behavior:"smooth"
+      });
+    }
+
+    // COUNTDOWN
+
+    const targetDate = new Date("December 31, 2026 00:00:00").getTime();
+
+    const timer = setInterval(function(){
+
+      const now = new Date().getTime();
+
+      const distance = targetDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+
+      if(distance < 0){
+        clearInterval(timer);
+
+        document.querySelector(".countdown").innerHTML =
+        "<h2>DROP IS LIVE</h2>";
+      }
+
+    },1000);
+
+  </script>
+
+</body>
+</html>
