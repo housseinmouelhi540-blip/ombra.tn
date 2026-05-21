@@ -3,314 +3,218 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>OMBRA</title>
-
-<link href=https://scontent.ftun6-1.fna.fbcdn.net/v/t1.15752-9/696391020_955676317225578_1574493210366622484_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_ohc=NJ6yXHLMGGsQ7kNvwFn5oPt&_nc_oc=AdonNznmLf3YivFS_TOpEfY-4_dGBkau8M8hFrpu0rgiEyOVpMHwcz7VTATiJ0dSByA&_nc_zt=23&_nc_ht=scontent.ftun6-1.fna&_nc_ss=7b6a8&oh=03_Q7cD5QHghCrtNJ9PLKK56prT0XkRkS3S5oN8Xe3D-r05fB1FFw&oe=6A36F363>
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
 }
 
 body{
-    background:#050505;
-    color:white;
-    font-family:'Montserrat',sans-serif;
-    overflow-x:hidden;
-}
-
-/* BACKGROUND EFFECT */
-
-.blur{
-    position:fixed;
-    width:700px;
-    height:700px;
-    background:radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
-    top:-200px;
-    right:-100px;
-    filter:blur(90px);
-    z-index:-1;
-    animation:move 8s infinite alternate;
-}
-
-@keyframes move{
-    from{
-        transform:translateY(0px);
-    }
-
-    to{
-        transform:translateY(100px);
-    }
+background:#050505;
+color:white;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
 
 nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 8%;
-    z-index:999;
-    background:rgba(0,0,0,0.3);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,255,255,0.05);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:25px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
 .logo{
-    font-size:28px;
-    font-weight:900;
-    letter-spacing:10px;
+font-size:28px;
+font-weight:900;
+letter-spacing:8px;
 }
 
 nav ul{
-    display:flex;
-    gap:40px;
-    list-style:none;
+display:flex;
+gap:40px;
+list-style:none;
 }
 
 nav ul li a{
-    color:white;
-    text-decoration:none;
-    letter-spacing:3px;
-    font-size:13px;
-    transition:0.3s;
+color:white;
+text-decoration:none;
+font-size:13px;
+letter-spacing:3px;
+transition:0.3s;
 }
 
 nav ul li a:hover{
-    opacity:0.5;
+opacity:0.5;
 }
 
 /* HERO */
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:120px 8%;
-    position:relative;
-}
-
-.hero-content{
-    position:relative;
-    z-index:2;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
 }
 
 .hero img{
-    width:330px;
-    margin-bottom:40px;
-    filter:drop-shadow(0 0 35px rgba(255,255,255,0.15));
-    animation:float 5s ease-in-out infinite;
-}
-
-@keyframes float{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-20px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-
+width:260px;
+margin-bottom:30px;
 }
 
 .hero h1{
-    font-size:120px;
-    font-weight:900;
-    letter-spacing:20px;
-    margin-bottom:20px;
+font-size:120px;
+font-weight:900;
+letter-spacing:18px;
 }
 
 .hero p{
-    color:#8f8f8f;
-    letter-spacing:5px;
-    margin-bottom:45px;
+margin-top:10px;
+font-size:18px;
+letter-spacing:6px;
+opacity:0.7;
 }
 
 .hero button{
-    padding:18px 50px;
-    border:none;
-    background:white;
-    color:black;
-    font-weight:700;
-    letter-spacing:4px;
-    cursor:pointer;
-    transition:0.4s;
+margin-top:40px;
+padding:18px 50px;
+background:white;
+color:black;
+border:none;
+font-weight:bold;
+letter-spacing:3px;
+cursor:pointer;
+transition:0.3s;
 }
 
 .hero button:hover{
-    transform:scale(1.08);
-    background:#d8d8d8;
+transform:scale(1.05);
+}
+
+/* SECTION */
+
+.section-title{
+padding:80px 60px 30px;
+font-size:50px;
+font-weight:900;
+letter-spacing:5px;
 }
 
 /* PRODUCTS */
 
-.section{
-    padding:120px 8%;
-}
-
-.title{
-    font-size:70px;
-    margin-bottom:70px;
-    font-weight:900;
-    letter-spacing:10px;
-}
-
 .products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+padding:0 60px 100px;
 }
 
 .card{
-    background:#0d0d0d;
-    border:1px solid rgba(255,255,255,0.05);
-    overflow:hidden;
-    transition:0.4s;
+background:#111;
+overflow:hidden;
+position:relative;
+transition:0.4s;
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    border-color:white;
+transform:translateY(-10px);
 }
 
 .card img{
-    width:100%;
-    height:420px;
-    object-fit:cover;
+width:100%;
+height:500px;
+object-fit:cover;
+transition:0.4s;
 }
 
-.card-content{
-    padding:25px;
+.card:hover img{
+transform:scale(1.05);
 }
 
-.card-content h2{
-    margin-bottom:10px;
-    font-size:24px;
+.coming{
+position:absolute;
+top:20px;
+right:20px;
+background:black;
+padding:10px 18px;
+border-radius:8px;
+font-size:12px;
+letter-spacing:2px;
 }
 
-.card-content p{
-    color:#8a8a8a;
-    margin-bottom:20px;
+.info{
+padding:25px;
 }
 
-.price{
-    font-size:22px;
-    font-weight:700;
+.info h3{
+font-size:24px;
+margin-bottom:10px;
 }
 
-/* ABOUT */
-
-.about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:80px;
-    align-items:center;
-}
-
-.about-logo{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#0d0d0d;
-    padding:60px;
-    border:1px solid rgba(255,255,255,0.05);
-}
-
-.about-logo img{
-    width:100%;
-    max-width:350px;
-}
-
-.about-text h2{
-    font-size:70px;
-    margin-bottom:25px;
-}
-
-.about-text p{
-    color:#999;
-    line-height:1.9;
-    font-size:17px;
+.info p{
+opacity:0.5;
+letter-spacing:3px;
 }
 
 /* FOOTER */
 
 footer{
-    padding:80px 8%;
-    text-align:center;
-    border-top:1px solid rgba(255,255,255,0.05);
+padding:40px;
+text-align:center;
+border-top:1px solid rgba(255,255,255,0.1);
+opacity:0.5;
 }
 
-footer h2{
-    font-size:40px;
-    letter-spacing:10px;
-    margin-bottom:30px;
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:70px;
 }
 
-.socials{
-    display:flex;
-    justify-content:center;
-    gap:30px;
+.hero img{
+width:180px;
 }
 
-.socials a{
-    color:white;
-    text-decoration:none;
-    letter-spacing:3px;
-    transition:0.3s;
+nav{
+padding:20px;
 }
 
-.socials a:hover{
-    opacity:0.5;
+nav ul{
+gap:15px;
 }
 
-/* RESPONSIVE */
+.section-title{
+padding:60px 20px 20px;
+font-size:35px;
+}
 
-@media(max-width:900px){
-
-    .hero h1{
-        font-size:60px;
-        letter-spacing:10px;
-    }
-
-    .title{
-        font-size:45px;
-    }
-
-    .about{
-        grid-template-columns:1fr;
-    }
-
-    nav ul{
-        display:none;
-    }
-
-    .hero img{
-        width:220px;
-    }
+.products{
+padding:0 20px 80px;
+}
 
 }
 
 </style>
 </head>
+
 <body>
-
-<div class="blur"></div>
-
-<!-- NAVBAR -->
 
 <nav>
 
@@ -325,14 +229,9 @@ footer h2{
 
 </nav>
 
-<!-- HERO -->
-
 <section class="hero">
 
-<div class="hero-content">
-
-<!-- حط التصويرة اللي بعثتهالي بنفس الاسم -->
-<img src="ombra-logo.png" alt="OMBRA Logo">
+<img src="ombra/logo.png" alt="OMBRA Logo">
 
 <h1>OMBRA</h1>
 
@@ -340,114 +239,42 @@ footer h2{
 
 <button>SHOP NOW</button>
 
-</div>
-
 </section>
 
-<!-- PRODUCTS -->
+<h2 class="section-title">NEW DROP</h2>
 
-<section class="section">
-
-<h2 class="title">NEW DROP</h2>
-
-<div class="products">
+<section class="products">
 
 <div class="card">
 
-<img src=https://scontent.ftun6-1.fna.fbcdn.net/v/t1.15752-9/696391020_955676317225578_1574493210366622484_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_ohc=NJ6yXHLMGGsQ7kNvwFn5oPt&_nc_oc=AdonNznmLf3YivFS_TOpEfY-4_dGBkau8M8hFrpu0rgiEyOVpMHwcz7VTATiJ0dSByA&_nc_zt=23&_nc_ht=scontent.ftun6-1.fna&_nc_ss=7b6a8&oh=03_Q7cD5QHghCrtNJ9PLKK56prT0XkRkS3S5oN8Xe3D-r05fB1FFw&oe=6A36F363>
+<div class="coming">COMING SOON</div>
 
-<div class="card-content">
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop" alt="hoodie">
 
-<h2>SHADOW</h2>
-
-<p>Premium oversized luxury hoodie.</p>
-
-<div class="price">$89</div>
-
+<div class="info">
+<h3>SHADOW HOODIE</h3>
+<p>LIMITED COLLECTION</p>
 </div>
 
 </div>
 
 <div class="card">
 
-<img src=https://scontent.ftun6-1.fna.fbcdn.net/v/t1.15752-9/696391020_955676317225578_1574493210366622484_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_ohc=NJ6yXHLMGGsQ7kNvwFn5oPt&_nc_oc=AdonNznmLf3YivFS_TOpEfY-4_dGBkau8M8hFrpu0rgiEyOVpMHwcz7VTATiJ0dSByA&_nc_zt=23&_nc_ht=scontent.ftun6-1.fna&_nc_ss=7b6a8&oh=03_Q7cD5QHghCrtNJ9PLKK56prT0XkRkS3S5oN8Xe3D-r05fB1FFw&oe=6A36F363>
+<div class="coming">COMING SOON</div>
 
-<div class="card-content">
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop" alt="pants">
 
-<h2>ROYAL BLACK</h2>
-
-<p>Minimal oversized streetwear tee.</p>
-
-<div class="price">$49</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<img src=https://scontent.ftun6-1.fna.fbcdn.net/v/t1.15752-9/696391020_955676317225578_1574493210366622484_n.jpg?stp=dst-jpg_s960x960_tt6&_nc_cat=102&ccb=1-7&_nc_sid=9f807c&_nc_ohc=NJ6yXHLMGGsQ7kNvwFn5oPt&_nc_oc=AdonNznmLf3YivFS_TOpEfY-4_dGBkau8M8hFrpu0rgiEyOVpMHwcz7VTATiJ0dSByA&_nc_zt=23&_nc_ht=scontent.ftun6-1.fna&_nc_ss=7b6a8&oh=03_Q7cD5QHghCrtNJ9PLKK56prT0XkRkS3S5oN8Xe3D-r05fB1FFw&oe=6A36F363>
-
-<div class="card-content">
-
-<h2>OMBRA HWS</h2>
-
-<p>Dark aesthetic luxury fit.</p>
-
-<div class="price">$75</div>
-
-</div>
-
+<div class="info">
+<h3>DARK PANTS</h3>
+<p>2026 SEASON</p>
 </div>
 
 </div>
 
 </section>
-
-<!-- ABOUT -->
-
-<section class="section">
-
-<div class="about">
-
-<div class="about-logo">
-
-<img src="ombra-logo.png">
-
-</div>
-
-<div class="about-text">
-
-<h2>THE BRAND</h2>
-
-<p>
-OMBRA represents mystery, silence and luxury.
-A brand created for people who move differently.
-Minimal design mixed with dark energy and premium fashion aesthetics.
-Not just clothing.
-A whole identity.
-</p>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
 
 <footer>
-
-<h2>OMBRA</h2>
-
-<div class="socials">
-
-<a href="#">INSTAGRAM : ombra.tn</a>
-<a href="#">TIKTOK : ombra.tn</a>
-<a href="#">FACEBOOK : ombra.tn</a>
-
-</div>
-
+OMBRA © 2026
 </footer>
 
 </body>
