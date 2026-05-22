@@ -1,387 +1,299 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>OMBRA</title>
-
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-      font-family:Arial, sans-serif;
-    }
-
-    body{
-      background:black;
-      color:white;
-      overflow-x:hidden;
-    }
-
-    .hero{
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      flex-direction:column;
-      text-align:center;
-    }
-
-    h1{
-      font-size:90px;
-      letter-spacing:10px;
-    }
-
-    p{
-      margin-top:20px;
-      color:gray;
-      font-size:18px;
-    }
-
-    .btn{
-      margin-top:40px;
-      padding:15px 40px;
-      border:1px solid white;
-      color:white;
-      text-decoration:none;
-      transition:0.3s;
-    }
-
-    .btn:hover{
-      background:white;
-      color:black;
-    }
-  </style>
-</head>
-
-<body>
-
-  <section class="hero">
-    <h1>OMBRA</h1>
-    <p>Dark Streetwear Vision</p>
-
-    <a href="https://instagram.com" class="btn">
-      INSTAGRAM
-    </a>
-  </section>
-
-</body>
-</html>
-
-Instagram
-Create an account or log in to Instagram – Share what you're into with the people who get you.
-<!DOCTYPE html>
-<html lang="en">
-<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>OMBRA</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
 <style>
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Montserrat',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#050505;
-    color:white;
-    font-family:'Montserrat',sans-serif;
-    overflow-x:hidden;
-}
-
-/* BACKGROUND EFFECT */
-
-.blur{
-    position:fixed;
-    width:700px;
-    height:700px;
-    background:radial-gradient(circle, rgba(255,255,255,0.08), transparent 70%);
-    top:-200px;
-    right:-100px;
-    filter:blur(90px);
-    z-index:-1;
-    animation:move 8s infinite alternate;
-}
-
-@keyframes move{
-    from{
-        transform:translateY(0px);
-    }
-
-    to{
-        transform:translateY(100px);
-    }
+background:#050505;
+color:white;
+overflow-x:hidden;
 }
 
 /* NAVBAR */
 
 nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:25px 8%;
-    z-index:999;
-    background:rgba(0,0,0,0.3);
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid rgba(255,255,255,0.05);
+position:fixed;
+top:0;
+left:0;
+width:100%;
+padding:30px 70px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+z-index:1000;
+background:rgba(0,0,0,0.35);
+backdrop-filter:blur(10px);
 }
 
 .logo{
-    font-size:28px;
-    font-weight:900;
-    letter-spacing:10px;
+font-size:30px;
+font-weight:900;
+letter-spacing:10px;
 }
 
 nav ul{
-    display:flex;
-    gap:40px;
-    list-style:none;
+display:flex;
+gap:45px;
+list-style:none;
 }
 
 nav ul li a{
-    color:white;
-    text-decoration:none;
-    letter-spacing:3px;
-    font-size:13px;
-    transition:0.3s;
+text-decoration:none;
+color:white;
+font-size:13px;
+letter-spacing:4px;
+transition:0.3s;
 }
 
 nav ul li a:hover{
-    opacity:0.5;
+opacity:0.5;
 }
 
 /* HERO */
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    padding:120px 8%;
-    position:relative;
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+position:relative;
+text-align:center;
+overflow:hidden;
 }
 
-.hero-content{
-    position:relative;
-    z-index:2;
+.hero::before{
+content:'';
+position:absolute;
+width:700px;
+height:700px;
+background:radial-gradient(circle,rgba(255,255,255,0.08),transparent 70%);
+filter:blur(60px);
+z-index:0;
 }
 
 .hero img{
-    width:330px;
-    margin-bottom:40px;
-    filter:drop-shadow(0 0 35px rgba(255,255,255,0.15));
-    animation:float 5s ease-in-out infinite;
+width:330px;
+position:relative;
+z-index:2;
+margin-bottom:25px;
+filter:drop-shadow(0 0 40px rgba(255,255,255,0.15));
+animation:float 4s ease-in-out infinite;
 }
 
 @keyframes float{
-
-    0%{
-        transform:translateY(0px);
-    }
-
-    50%{
-        transform:translateY(-20px);
-    }
-
-    100%{
-        transform:translateY(0px);
-    }
-
+0%{transform:translateY(0px);}
+50%{transform:translateY(-12px);}
+100%{transform:translateY(0px);}
 }
 
 .hero h1{
-    font-size:120px;
-    font-weight:900;
-    letter-spacing:20px;
-    margin-bottom:20px;
+font-size:130px;
+font-weight:900;
+letter-spacing:18px;
+position:relative;
+z-index:2;
 }
 
 .hero p{
-    color:#8f8f8f;
-    letter-spacing:5px;
-    margin-bottom:45px;
+margin-top:15px;
+letter-spacing:8px;
+font-size:16px;
+opacity:0.6;
+position:relative;
+z-index:2;
 }
 
 .hero button{
-    padding:18px 50px;
-    border:none;
-    background:white;
-    color:black;
-    font-weight:700;
-    letter-spacing:4px;
-    cursor:pointer;
-    transition:0.4s;
+margin-top:45px;
+padding:18px 55px;
+border:none;
+background:white;
+color:black;
+font-weight:700;
+letter-spacing:4px;
+cursor:pointer;
+transition:0.4s;
+position:relative;
+z-index:2;
 }
 
 .hero button:hover{
-    transform:scale(1.08);
-    background:#d8d8d8;
+transform:scale(1.05);
+background:#d9d9d9;
+}
+
+/* SECTION */
+
+.section{
+padding:120px 70px;
+}
+
+.section-title{
+font-size:70px;
+font-weight:900;
+letter-spacing:8px;
+margin-bottom:60px;
 }
 
 /* PRODUCTS */
 
-.section{
-    padding:120px 8%;
-}
-
-.title{
-    font-size:70px;
-    margin-bottom:70px;
-    font-weight:900;
-    letter-spacing:10px;
-}
-
 .products{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:35px;
 }
 
 .card{
-    background:#0d0d0d;
-    border:1px solid rgba(255,255,255,0.05);
-    overflow:hidden;
-    transition:0.4s;
+background:#111;
+position:relative;
+overflow:hidden;
+transition:0.4s;
+border:1px solid rgba(255,255,255,0.05);
 }
 
 .card:hover{
-    transform:translateY(-10px);
-    border-color:white;
+transform:translateY(-12px);
+border:1px solid rgba(255,255,255,0.2);
 }
 
 .card img{
-    width:100%;
-    height:420px;
-    object-fit:cover;
+width:100%;
+height:500px;
+object-fit:cover;
+transition:0.5s;
+background:black;
 }
 
-.card-content{
-    padding:25px;
+.card:hover img{
+transform:scale(1.05);
 }
 
-.card-content h2{
-    margin-bottom:10px;
-    font-size:24px;
+.tag{
+position:absolute;
+top:20px;
+right:20px;
+background:black;
+padding:12px 18px;
+font-size:12px;
+letter-spacing:3px;
+border-radius:10px;
+font-weight:600;
 }
 
-.card-content p{
-    color:#8a8a8a;
-    margin-bottom:20px;
+.info{
+padding:25px;
 }
 
-.price{
-    font-size:22px;
-    font-weight:700;
+.info h3{
+font-size:24px;
+margin-bottom:10px;
+font-weight:700;
+}
+
+.info p{
+opacity:0.5;
+letter-spacing:3px;
+font-size:13px;
 }
 
 /* ABOUT */
 
 .about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:80px;
-    align-items:center;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:150px 30px;
+border-top:1px solid rgba(255,255,255,0.08);
+border-bottom:1px solid rgba(255,255,255,0.08);
 }
 
-.about-logo{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background:#0d0d0d;
-    padding:60px;
-    border:1px solid rgba(255,255,255,0.05);
+.about h2{
+font-size:70px;
+letter-spacing:8px;
+margin-bottom:30px;
 }
 
-.about-logo img{
-    width:100%;
-    max-width:350px;
-}
-
-.about-text h2{
-    font-size:70px;
-    margin-bottom:25px;
-}
-
-.about-text p{
-    color:#999;
-    line-height:1.9;
-    font-size:17px;
+.about p{
+max-width:700px;
+opacity:0.6;
+line-height:2;
+letter-spacing:2px;
 }
 
 /* FOOTER */
 
 footer{
-    padding:80px 8%;
-    text-align:center;
-    border-top:1px solid rgba(255,255,255,0.05);
+padding:50px;
+text-align:center;
+opacity:0.4;
+letter-spacing:3px;
 }
 
-footer h2{
-    font-size:40px;
-    letter-spacing:10px;
-    margin-bottom:30px;
+/* MOBILE */
+
+@media(max-width:768px){
+
+nav{
+padding:25px;
 }
 
-.socials{
-    display:flex;
-    justify-content:center;
-    gap:30px;
+nav ul{
+gap:18px;
 }
 
-.socials a{
-    color:white;
-    text-decoration:none;
-    letter-spacing:3px;
-    transition:0.3s;
+.logo{
+font-size:22px;
 }
 
-.socials a:hover{
-    opacity:0.5;
+.hero h1{
+font-size:65px;
+letter-spacing:10px;
 }
 
-/* RESPONSIVE */
+.hero p{
+font-size:12px;
+letter-spacing:4px;
+}
 
-@media(max-width:900px){
+.hero img{
+width:210px;
+}
 
-    .hero h1{
-        font-size:60px;
-        letter-spacing:10px;
-    }
+.section{
+padding:80px 20px;
+}
 
-    .title{
-        font-size:45px;
-    }
+.section-title{
+font-size:40px;
+}
 
-    .about{
-        grid-template-columns:1fr;
-    }
-
-    nav ul{
-        display:none;
-    }
-
-    .hero img{
-        width:220px;
-    }
+.about h2{
+font-size:40px;
+}
 
 }
 
 </style>
 </head>
-<body>
 
-<div class="blur"></div>
+<body>
 
 <!-- NAVBAR -->
 
@@ -391,9 +303,8 @@ footer h2{
 
 <ul>
 <li><a href="#">HOME</a></li>
-<li><a href="#">SHOP</a></li>
-<li><a href="#">ABOUT</a></li>
-<li><a href="#">CONTACT</a></li>
+<li><a href="#drop">DROP</a></li>
+<li><a href="#about">ABOUT</a></li>
 </ul>
 
 </nav>
@@ -402,10 +313,7 @@ footer h2{
 
 <section class="hero">
 
-<div class="hero-content">
-
-<!-- حط التصويرة اللي بعثتهالي بنفس الاسم -->
-<img src="ombra-logo.png" alt="OMBRA Logo">
+<img src="ombra/logo.png" alt="OMBRA">
 
 <h1>OMBRA</h1>
 
@@ -413,62 +321,51 @@ footer h2{
 
 <button>SHOP NOW</button>
 
-</div>
-
 </section>
 
-<!-- PRODUCTS -->
+<!-- DROP -->
 
-<section class="section">
+<section class="section" id="drop">
 
-<h2 class="title">NEW DROP</h2>
+<h2 class="section-title">NEW DROP</h2>
 
 <div class="products">
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200">
+<div class="tag">COMING SOON</div>
 
-<div class="card-content">
+<img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200&auto=format&fit=crop">
 
-<h2>SHADOW HOODIE</h2>
-
-<p>Premium oversized luxury hoodie.</p>
-
-<div class="price">$89</div>
-
+<div class="info">
+<h3>SHADOW SET</h3>
+<p>LIMITED COLLECTION</p>
 </div>
 
 </div>
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?q=80&w=1200">
+<div class="tag">COMING SOON</div>
 
-<div class="card-content">
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop">
 
-<h2>BLACKOUT TEE</h2>
-
-<p>Minimal oversized streetwear tee.</p>
-
-<div class="price">$49</div>
-
+<div class="info">
+<h3>DARK PANTS</h3>
+<p>2026 DROP</p>
 </div>
 
 </div>
 
 <div class="card">
 
-<img src="https://images.unsplash.com/photo-1523398002811-999ca8dec234?q=80&w=1200">
+<div class="tag">COMING SOON</div>
 
-<div class="card-content">
+<img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f?q=80&w=1200&auto=format&fit=crop">
 
-<h2>OMBRA PANTS</h2>
-
-<p>Dark aesthetic luxury fit.</p>
-
-<div class="price">$75</div>
-
+<div class="info">
+<h3>OVERSIZED TEE</h3>
+<p>OMBRE EDITION</p>
 </div>
 
 </div>
@@ -479,48 +376,22 @@ footer h2{
 
 <!-- ABOUT -->
 
-<section class="section">
+<section class="about" id="about">
 
-<div class="about">
-
-<div class="about-logo">
-
-<img src="ombra-logo.png">
-
-</div>
-
-<div class="about-text">
-
-<h2>THE BRAND</h2>
+<h2>OMBRA</h2>
 
 <p>
-OMBRA represents mystery, silence and luxury.
-A brand created for people who move differently.
-Minimal design mixed with dark energy and premium fashion aesthetics.
-Not just clothing.
-A whole identity.
+A DARK LUXURY STREETWEAR BRAND INSPIRED BY SHADOWS,
+MINIMALISM AND MODERN FASHION CULTURE.
+CREATED FOR PEOPLE WHO WANT A POWERFUL AND CLEAN IDENTITY.
 </p>
-
-</div>
-
-</div>
 
 </section>
 
 <!-- FOOTER -->
 
 <footer>
-
-<h2>OMBRA</h2>
-
-<div class="socials">
-
-<a href="#">INSTAGRAM</a>
-<a href="#">TIKTOK</a>
-<a href="#">FACEBOOK</a>
-
-</div>
-
+OMBRA © 2026
 </footer>
 
 </body>
